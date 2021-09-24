@@ -1,77 +1,76 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>JavaScript Quiz App</title>
     <!-- Bootstrap CSS Fontawesome-->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> -->
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-
-</head>
-
-<body>
+  <body>
     <h1>JavaScript Quiz App</h1>
     <div id="container">
-        <!-- start section -->
-        <div id="start">Start Quiz</div>
+      <!-- start section -->
+      <div id="start">Start Quiz</div>
 
-        <!-- rules section -->
-        <div id="rules">
-            <h2>Quiz Rules</h2>
-            <ol>
-                <li>You have 20 seconds to answer each question.</li>
-                <li>You must select an answer before moving on to next question</li>
-                <li>Timer will restart for each question</li>
-                <li>You will receive a score once all questions have been answered</li>
-            </ol>
-            <div id="button">
-                <button id="exit">Exit</button>
-                <button id="continue">Continue</button>
-            </div>
+      <!-- rules section -->
+      <div id="rules">
+        <h2>Quiz Rules</h2>
+        <ol>
+          <li>You have 20 seconds to answer each question.</li>
+          <li>You must select an answer before moving on to next question</li>
+          <li>Timer will restart for each question</li>
+          <li>
+            You will receive a score once all questions have been answered
+          </li>
+        </ol>
+        <div id="button">
+          <button id="exit">Exit</button>
+          <button id="continue">Continue</button>
         </div>
+      </div>
 
-        <!-- quiz section -->
-        <div id="quiz">
-            <div id="quiz_header">
-                <h2>Please answer each question</h2>
-                <div id="timer">
-                    <h4>Time Left:</h4>
-                    <h4 id="time">00</h4>
-                </div>
-            </div>
-            <!-- questions -->
-            <div id="question">
-                <h3 id="questionNo">1. </h3>
-                <h3 id="questionText">Inside which HTML element do we put the JavaScript?</h3>
-            </div>
-            <!-- quiz options -->
-            <div id="optionList">
-                <h4 class="choice_que" id="option1">A.</h4>
-                <h4 class="choice_que" id="option2">B.</h4>
-                <h4 class="choice_que" id="option3">C.</h4>
-                <h4 class="choice_que" id="option4">D.</h4>
-            </div>
-            <div id="answersSection">
-                <h3 id="total_correct">4 of 5</h3>
-                <h3 id="next_question">Next</h3>
-            </div>
+      <!-- quiz section -->
+      <div id="quiz">
+        <div id="quiz_header">
+          <h2>Please answer each question</h2>
+          <div id="timer">
+            <h4>Time Left:</h4>
+            <h4 id="time">00</h4>
+          </div>
         </div>
-        <!-- score section -->
-        <div id="result">
-            <i class="fas fa-award"></i>
-            <h5>Quiz Results</h5>
-            <h5 id="score">You got 4 out of 5</h5>
-            <button id="quit">Quit Quiz</button>
-            <button id="re_start">Re-Start Quiz</button>
-
+        <!-- questions -->
+        <div id="question">
+          <h3 id="questionNo">1.</h3>
+          <h3 id="questionText">
+            Inside which HTML element do we put the JavaScript?
+          </h3>
         </div>
-
+        <!-- quiz options -->
+        <div id="optionList">
+          <h4 class="choice_que" id="option1">A.</h4>
+          <h4 class="choice_que" id="option2">B.</h4>
+          <h4 class="choice_que" id="option3">C.</h4>
+          <h4 class="choice_que" id="option4">D.</h4>
+        </div>
+        <div id="answersSection">
+          <h3 id="total_correct">4 of 5</h3>
+          <h3 id="next_question">Next</h3>
+        </div>
+      </div>
+      <!-- result section -->
+      <div id="result">
+        <i class="fas fa-award"></i>
+        <h5>Quiz Results</h5>
+        <h5 id="score">You got 4 out of 5</h5>
+        <button id="quit">Quit Quiz</button>
+        <button id="re_start">Re-Start Quiz</button>
+      </div>
     </div>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -79,6 +78,5 @@
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"></script> -->
     <script src="app.js"></script>
-</body>
-
+  </body>
 </html>
