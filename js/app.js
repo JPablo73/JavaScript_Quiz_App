@@ -94,10 +94,8 @@ choice_que.forEach((choices, choiceNo) => {
     choices.classList.add("active");
     if (choiceNo === quesList[index].answer) {
       correct++;
-      quesList[index].answer.style.background = "green";
     } else {
       correct += 0;
-      quesList[index].answer.style.background = "red";
     }
     //stops counter
     clearInterval(interval);
