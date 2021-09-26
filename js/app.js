@@ -1,39 +1,38 @@
 // start button
-let start = document.querySelector("#start");
+const start = document.querySelector("#start");
 // rules section
-let rules = document.querySelector("#rules");
-let exit = document.querySelector("#exit");
-let continueBtn = document.querySelector("#continue");
+const rules = document.querySelector("#rules");
+const exit = document.querySelector("#exit");
+const continueBtn = document.querySelector("#continue");
 //quiz section
-let quiz = document.querySelector("#quiz");
-let time = document.querySelector("#time");
+const quitBtn = document.querySelector("#quitBtn");
+const quiz = document.querySelector("#quiz");
+const time = document.querySelector("#time");
 //question section
-let questionNo = document.querySelector("#questionNo");
-let questionText = document.querySelector("#questionText");
+const questionNo = document.querySelector("#questionNo");
+const questionText = document.querySelector("#questionText");
 //question options
-let option1 = document.querySelector("#option1");
-let option2 = document.querySelector("#option2");
-let option3 = document.querySelector("#option3");
-let option4 = document.querySelector("#option4");
+const option1 = document.querySelector("#option1");
+const option2 = document.querySelector("#option2");
+const option3 = document.querySelector("#option3");
+const option4 = document.querySelector("#option4");
 //answer section
-let total_correct = document.querySelector("#total_correct");
+const total_correct = document.querySelector("#total_correct");
 let next_question = document.querySelector("#next_question");
 //result section
-let result = document.querySelector("#result");
-let score = document.querySelector("#score");
-let quit = document.querySelector("#quit");
-let re_start = document.querySelector("#re_start");
+const result = document.querySelector("#result");
+const score = document.querySelector("#score");
+const quit = document.querySelector("#quit");
+const re_start = document.querySelector("#re_start");
 //options
-let choice_que = document.querySelectorAll(".choice_que");
+const choice_que = document.querySelectorAll(".choice_que");
 
 let index = 0;
-let timer = 0;
+let timer = 10;
 let interval = 0;
 
 //total score
 let correct = 0;
-
-let UserAns = undefined;
 
 //start button clicked
 start.addEventListener("click", () => {
@@ -43,17 +42,22 @@ start.addEventListener("click", () => {
 
 //exit button clicked
 exit.addEventListener("click", () => {
-  start.style.display = "block";
+  start.style.display = "flex";
   rules.style.display = "none";
+});
+
+quitBtn.addEventListener("click", () => {
+  start.style.display = "flex";
+  quiz.style.display = "none";
 });
 
 //quiz timer
 let countDown = () => {
-  if (timer === 20) {
+  if (timer === 00) {
     clearInterval(interval);
     next_question.click();
   } else {
-    timer++;
+    timer -= 1;
     time.innerText = timer;
   }
 };
@@ -66,7 +70,7 @@ let loadData = () => {
   option3.innerText = quesList[index].choice3;
   option4.innerText = quesList[index].choice4;
 
-  timer = 0;
+  timer = 11;
 };
 
 loadData();
@@ -90,8 +94,10 @@ choice_que.forEach((choices, choiceNo) => {
     choices.classList.add("active");
     if (choiceNo === quesList[index].answer) {
       correct++;
+      quesList[index].answer.style.background = "green";
     } else {
       correct += 0;
+      quesList[index].answer.style.background = "red";
     }
     //stops counter
     clearInterval(interval);
@@ -104,7 +110,7 @@ choice_que.forEach((choices, choiceNo) => {
 });
 
 next_question.addEventListener("click", () => {
-  //    if index is less then MCQS.length
+  //    if index is less then quesList.length
   if (index !== quesList.length - 1) {
     index++;
     choice_que.forEach((removeActive) => {
@@ -115,7 +121,7 @@ next_question.addEventListener("click", () => {
 
     // result
     total_correct.style.display = "block";
-    total_correct.innerHTML = `${correct} Out Of ${quesList.length} Questions`;
+    total_correct.innerHTML = `${correct} Of ${quesList.length}`;
     clearInterval(interval);
     interval = setInterval(countDown, 1000);
   } else {
@@ -133,7 +139,7 @@ next_question.addEventListener("click", () => {
 
 //quit button clicked
 quit.addEventListener("click", () => {
-  start.style.display = "block";
+  start.style.display = "flex";
   result.style.display = "none";
 });
 

@@ -1,77 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>JavaScript Quiz App</title>
-    <!-- Bootstrap CSS Fontawesome-->
     <link
-      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600&family=Exo:ital,wght@1,600&display=swap"
       rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
     />
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
-    <h1>JavaScript Quiz App</h1>
-    <div id="container">
-      <!-- start section -->
-      <div id="start">Start Quiz</div>
+    <div class="container">
+      <section class="section">
+        <section class="hero is-success">
+          <div class="hero-body">
+            <div class="container">
+              <h1 class="title is-size-2">JavaScript Quiz</h1>
+              <h2 class="subtitle">Test Your Knowledge</h2>
+            </div>
+          </div>
+        </section>
+      </section>
+      <div id="start">
+        <button class="button is-info is-outlined is-large">Start Quiz</button>
+      </div>
 
       <!-- rules section -->
-      <div id="rules">
-        <h2>Quiz Rules</h2>
-        <ol>
-          <li>You have 20 seconds to answer each question.</li>
-          <li>You must select an answer before moving on to next question</li>
-          <li>Timer will restart for each question</li>
-          <li>
-            You will receive a score once all questions have been answered
-          </li>
-        </ol>
-        <div id="button">
-          <button id="exit">Exit</button>
-          <button id="continue">Continue</button>
+      <div class="card" id="rules">
+        <div class="header is-info">
+          <h2 class="title is-size-3">Qiuz Rules</h2>
         </div>
+        <div class="card-content">
+          <ol>
+            <li>You have 10 seconds to answer each question.</li>
+            <li>You must select an answer before moving on to next question</li>
+            <li>Timer will restart for each question</li>
+            <li>You will receive a score at the end of the quiz</li>
+          </ol>
+        </div>
+        <footer class="card-footer">
+          <div class="card-footer-item">
+            <button class="button is-danger" id="exit">Exit</button>
+          </div>
+          <div class="card-footer-item">
+            <button class="button is-info" id="continue">Continue</button>
+          </div>
+        </footer>
       </div>
 
       <!-- quiz section -->
-      <div id="quiz">
-        <div id="quiz_header">
-          <h2>Please answer each question</h2>
+      <div class="card" id="quiz">
+        <div class="header is-info" id="quiz_header">
+          <h3 class="title">Please answer each question</h3>
           <div id="timer">
-            <h4>Time Left:</h4>
-            <h4 id="time">00</h4>
+            <h6>Timer:</h6>
+            <h6 id="time">00</h6>
           </div>
         </div>
-        <!-- questions -->
-        <div id="question">
-          <h3 id="questionNo"></h3>
-          <h3 id="questionText"></h3>
+        <div class="card-content">
+          <!-- questions -->
+          <div id="question">
+            <h4 id="questionNo"></h4>
+            <h4 id="questionText"></h4>
+          </div>
+          <!-- answer choices -->
+          <div id="optionList">
+            <h5 class="choice_que" id="option1"></h5>
+            <h5 class="choice_que" id="option2"></h5>
+            <h5 class="choice_que" id="option3"></h5>
+            <h5 class="choice_que" id="option4"></h5>
+          </div>
         </div>
-
-        <!-- quiz options -->
-        <div id="optionList">
-          <h4 class="choice_que" id="option1"></h4>
-          <h4 class="choice_que" id="option2"></h4>
-          <h4 class="choice_que" id="option3"></h4>
-          <h4 class="choice_que" id="option4"></h4>
-        </div>
-
-        <div id="answersSection">
-          <h3 id="total_correct">4 of 5</h3>
-          <h3 id="next_question">Next</h3>
-        </div>
+        <footer class="card-footer">
+          <div class="card-footer-item">
+            <h6 id="total_correct">4 of 5</h6>
+          </div>
+          <div class="card-footer-item">
+            <button class="button is-danger" id="quitBtn">Exit</button>
+          </div>
+          <div class="card-footer-item">
+            <button class="button is-info" id="next_question">Next</button>
+          </div>
+        </footer>
       </div>
+
       <!-- result section -->
-      <div id="result">
-        <i class="fas fa-award"></i>
-        <h5>Quiz Results</h5>
-        <h5 id="score">You got 4 out of 5</h5>
-        <button id="quit">Quit Quiz</button>
-        <button id="re_start">Re-Start Quiz</button>
+      <div class="card" id="result">
+        <div class="header is-info">
+          <h5 class="title is-size-3">Game Over!</h5>
+        </div>
+        <div class="card-content">
+          <h6 id="score">You got 4 out of 5 correct</h6>
+        </div>
+        <footer class="card-footer">
+          <div class="card-footer-item">
+            <button class="button is-danger" id="quit">Exit Game</button>
+          </div>
+          <div class="card-footer-item">
+            <button class="button is-info" id="re_start">Start Over</button>
+          </div>
+        </footer>
       </div>
     </div>
 
